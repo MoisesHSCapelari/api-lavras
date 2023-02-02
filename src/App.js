@@ -2,6 +2,8 @@ import dotenv from 'dotenv';
 dotenv.config();
 import './Database';
 import express from 'express';
+import cors from 'cors';
+import helmet from 'helmet';
 import HomeRoutes from './Routes/HomeRoutes';
 import UserRoutes from './Routes/UserRoutes';
 import ChildrensRoutes from './Routes/ChildrensRoutes';
@@ -9,6 +11,21 @@ import TokenRoutes from './Routes/TokenRoutes';
 import UploadRoutes from './Routes/UploadRoutes';
 import EventEIRoutes from './Routes/EventEIRoutes';
 import EventRegistrationRoutes from './Routes/EventRegistrationRoutes';
+
+const whiteList = [
+  'https://espaco-infantil-lavras.admccbgru.com.br',
+  'http://localhost:3000',
+];
+
+const corsOptions = {
+  origin(origin, callback) {
+    if (whiteList.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Acesso restrito'));
+    }
+  },
+};
 
 class App {
   constructor() {
@@ -18,6 +35,8 @@ class App {
   }
 
   middlewares() {
+    this.app.use(cors(corsOptions));
+    this.app.use(helmet());
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(express.json());
   }
