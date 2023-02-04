@@ -11,6 +11,7 @@ var _TokenRoutes = require('./Routes/TokenRoutes'); var _TokenRoutes2 = _interop
 var _UploadRoutes = require('./Routes/UploadRoutes'); var _UploadRoutes2 = _interopRequireDefault(_UploadRoutes);
 var _EventEIRoutes = require('./Routes/EventEIRoutes'); var _EventEIRoutes2 = _interopRequireDefault(_EventEIRoutes);
 var _EventRegistrationRoutes = require('./Routes/EventRegistrationRoutes'); var _EventRegistrationRoutes2 = _interopRequireDefault(_EventRegistrationRoutes);
+var _ColaboratesRoutes = require('./Routes/ColaboratesRoutes'); var _ColaboratesRoutes2 = _interopRequireDefault(_ColaboratesRoutes);
 
 const whiteList = [
   'https://espaco-infantil-lavras.admccbgru.com.br',
@@ -49,6 +50,7 @@ class App {
     this.app.use('/upload', _UploadRoutes2.default);
     this.app.use('/espaco-infantil', _EventEIRoutes2.default);
     this.app.use('/evento', _EventRegistrationRoutes2.default);
+    this.app.use('/colaboradoras', _ColaboratesRoutes2.default);
   }
 }
 

@@ -4,7 +4,7 @@ var _EventRegistration = require('./EventRegistration'); var _EventRegistration2
  class EventEI extends _sequelize.Model {
   static init(sequelize) {
     super.init({
-      history: {
+      historyTold: {
         type: _sequelize2.default.STRING,
         defaultValue: '',
         validate: {

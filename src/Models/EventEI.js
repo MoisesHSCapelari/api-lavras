@@ -4,7 +4,7 @@ import EventRegistration from './EventRegistration';
 export default class EventEI extends Model {
   static init(sequelize) {
     super.init({
-      history: {
+      historyTold: {
         type: Sequelize.STRING,
         defaultValue: '',
         validate: {

@@ -11,6 +11,7 @@ import TokenRoutes from './Routes/TokenRoutes';
 import UploadRoutes from './Routes/UploadRoutes';
 import EventEIRoutes from './Routes/EventEIRoutes';
 import EventRegistrationRoutes from './Routes/EventRegistrationRoutes';
+import ColaboratesRoutes from './Routes/ColaboratesRoutes';
 
 const whiteList = [
   'https://espaco-infantil-lavras.admccbgru.com.br',
@@ -49,6 +50,7 @@ class App {
     this.app.use('/upload', UploadRoutes);
     this.app.use('/espaco-infantil', EventEIRoutes);
     this.app.use('/evento', EventRegistrationRoutes);
+    this.app.use('/colaboradoras', ColaboratesRoutes);
   }
 }
 

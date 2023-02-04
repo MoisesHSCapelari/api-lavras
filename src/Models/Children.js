@@ -1,6 +1,5 @@
 import Sequelize, { Model } from 'sequelize';
 import bcryptjs from 'bcryptjs';
-import EventRegistration from './EventRegistration';
 
 export default class Children extends Model {
   static init(sequelize) {
