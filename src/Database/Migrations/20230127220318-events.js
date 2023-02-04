@@ -15,7 +15,7 @@ module.exports = {
       gruop: {
         type: Sequelize.STRING,
         allowNull: false,
-        unique: true,
+
       },
       contadora: {
         type: Sequelize.STRING,

@@ -56,6 +56,9 @@ export default class Colaborate extends Model {
           notEmpty: {
             msg: 'CPF não informado',
           },
+          unique: {
+            msg: 'CPF ja Cadastrado',
+          },
         },
       },
       phone: {
