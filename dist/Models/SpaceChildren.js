@@ -1,11 +1,10 @@
-import Sequelize, { Model } from 'sequelize';
-import EventRegistration from './EventRegistration';
+"use strict";Object.defineProperty(exports, "__esModule", {value: true}); function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }var _sequelize = require('sequelize'); var _sequelize2 = _interopRequireDefault(_sequelize);
 
-export default class EventEI extends Model {
+ class SpaceChildren extends _sequelize.Model {
   static init(sequelize) {
     super.init({
-      historyTold: {
-        type: Sequelize.STRING,
+      bibleStory: {
+        type: _sequelize2.default.STRING,
         defaultValue: '',
         validate: {
           notEmpty: {
@@ -14,7 +13,7 @@ export default class EventEI extends Model {
         },
       },
       gruop: {
-        type: Sequelize.INTEGER,
+        type: _sequelize2.default.INTEGER,
         defaultValue: '',
         validate: {
           notEmpty: {
@@ -23,7 +22,7 @@ export default class EventEI extends Model {
         },
       },
       contadora: {
-        type: Sequelize.STRING,
+        type: _sequelize2.default.STRING,
         defaultValue: '',
         validate: {
           notEmpty: {
@@ -32,7 +31,7 @@ export default class EventEI extends Model {
         },
       },
       dateEvent: {
-        type: Sequelize.DATE,
+        type: _sequelize2.default.DATE,
         defaultValue: '',
         validate: {
           notEmpty: {
@@ -42,10 +41,10 @@ export default class EventEI extends Model {
       },
     }, {
       sequelize,
-      tableName: 'eventsEI',
+      tableName: 'spaceChildrens',
       freezeTableName: true,
     });
 
     return this;
   }
-}
+} exports.default = SpaceChildren;

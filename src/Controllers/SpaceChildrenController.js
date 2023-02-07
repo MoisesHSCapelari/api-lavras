@@ -1,9 +1,9 @@
-import EventEI from '../Models/EventEI';
+import SpaceChildren from '../Models/SpaceChildren';
 
-class EventEIController {
+class SpaceChildrenController {
   async store(req, res) {
     try {
-      const eventNew = await EventEI.create(req.body);
+      const eventNew = await SpaceChildren.create(req.body);
       return res.json({ eventNew });
     } catch (e) {
       return res.status(400).json({
@@ -15,8 +15,8 @@ class EventEIController {
   // index
   async index(req, res) {
     try {
-      const eventEI = await EventEI.findAll();
-      return res.status(200).json(eventEI);
+      const spaceChildren = await SpaceChildren.findAll();
+      return res.status(200).json(spaceChildren);
     } catch (e) {
       return res.status(400).json('Acesso não Autorizado!');
     }
@@ -30,8 +30,8 @@ class EventEIController {
           errors: ['ID não informado'],
         });
       }
-      const eventEI = await EventEI.findByPk(req.params.id);
-      return res.status(200).json(eventEI);
+      const spaceChildren = await SpaceChildren.findByPk(req.params.id);
+      return res.status(200).json(spaceChildren);
     } catch (e) {
       return res.status(400).json({
         errors: ['Acesso não Autorizado!'],
@@ -48,15 +48,15 @@ class EventEIController {
         });
       }
 
-      const eventEI = await EventEI.findByPk(req.params.id);
-      if (!eventEI) {
+      const spaceChildren = await SpaceChildren.findByPk(req.params.id);
+      if (!spaceChildren) {
         return res.status(400).json({
           errors: ['Evento de Espaço Infantil não encontrado'],
         });
       }
 
-      const newEventEI = await eventEI.update(req.body);
-      return res.status(200).json(newEventEI);
+      const newSpaceChildren = await SpaceChildren.update(req.body);
+      return res.status(200).json(newSpaceChildren);
     } catch (e) {
       return res.status(400).json({
         errors: e.errors.map((err) => err.message),
@@ -65,4 +65,4 @@ class EventEIController {
   }
 }
 
-export default new EventEIController();
+export default new SpaceChildrenController();

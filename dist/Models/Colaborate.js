@@ -52,10 +52,12 @@ var _bcryptjs = require('bcryptjs'); var _bcryptjs2 = _interopRequireDefault(_bc
       CPF: {
         type: _sequelize2.default.STRING,
         dafaultValue: ' ',
+        unique: true,
         validate: {
           notEmpty: {
             msg: 'CPF não informado',
           },
+
         },
       },
       phone: {

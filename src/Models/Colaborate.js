@@ -52,13 +52,12 @@ export default class Colaborate extends Model {
       CPF: {
         type: Sequelize.STRING,
         dafaultValue: ' ',
+        unique: true,
         validate: {
           notEmpty: {
             msg: 'CPF não informado',
           },
-          unique: {
-            msg: 'CPF ja Cadastrado',
-          },
+
         },
       },
       phone: {

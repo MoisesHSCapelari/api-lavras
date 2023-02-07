@@ -1,13 +1,13 @@
-module.exports = {
+"use strict";module.exports = {
   async up(queryInterface, Sequelize) {
-    return queryInterface.createTable('eventsEI', {
+    return queryInterface.createTable('spaceChildrens', {
       id: {
         type: Sequelize.INTEGER,
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
       },
-      history: {
+      bibleStory: {
         type: Sequelize.STRING,
         allowNull: false,
 
@@ -41,6 +41,6 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    return queryInterface.dropTable('eventsEI');
+    return queryInterface.dropTable('spaceChildrens');
   },
 };

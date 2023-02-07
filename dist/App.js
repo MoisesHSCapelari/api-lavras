@@ -9,9 +9,10 @@ var _UserRoutes = require('./Routes/UserRoutes'); var _UserRoutes2 = _interopReq
 var _ChildrensRoutes = require('./Routes/ChildrensRoutes'); var _ChildrensRoutes2 = _interopRequireDefault(_ChildrensRoutes);
 var _TokenRoutes = require('./Routes/TokenRoutes'); var _TokenRoutes2 = _interopRequireDefault(_TokenRoutes);
 var _UploadRoutes = require('./Routes/UploadRoutes'); var _UploadRoutes2 = _interopRequireDefault(_UploadRoutes);
-var _EventEIRoutes = require('./Routes/EventEIRoutes'); var _EventEIRoutes2 = _interopRequireDefault(_EventEIRoutes);
+var _SpaceChildrensRoutes = require('./Routes/SpaceChildrensRoutes'); var _SpaceChildrensRoutes2 = _interopRequireDefault(_SpaceChildrensRoutes);
 var _EventRegistrationRoutes = require('./Routes/EventRegistrationRoutes'); var _EventRegistrationRoutes2 = _interopRequireDefault(_EventRegistrationRoutes);
 var _ColaboratesRoutes = require('./Routes/ColaboratesRoutes'); var _ColaboratesRoutes2 = _interopRequireDefault(_ColaboratesRoutes);
+var _GruopsRoutes = require('./Routes/GruopsRoutes'); var _GruopsRoutes2 = _interopRequireDefault(_GruopsRoutes);
 
 const whiteList = [
   'https://espaco-infantil-lavras.admccbgru.com.br',
@@ -48,9 +49,10 @@ class App {
     this.app.use('/criancas', _ChildrensRoutes2.default);
     this.app.use('/tokens', _TokenRoutes2.default);
     this.app.use('/upload', _UploadRoutes2.default);
-    this.app.use('/espaco-infantil', _EventEIRoutes2.default);
+    this.app.use('/espacoi', _SpaceChildrensRoutes2.default);
     this.app.use('/evento', _EventRegistrationRoutes2.default);
     this.app.use('/colaboradoras', _ColaboratesRoutes2.default);
+    this.app.use('/grupos', _GruopsRoutes2.default);
   }
 }
 

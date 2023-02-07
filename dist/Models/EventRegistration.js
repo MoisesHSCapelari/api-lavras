@@ -33,7 +33,7 @@
   }
 
   static associate(models) {
-    this.belongsTo(models.EventEI, { foreignKey: 'id_evento' });
+    this.belongsTo(models.SpaceChildren, { foreignKey: 'id_evento' });
     this.belongsTo(models.Children, { foreignKey: 'id_crianca' });
   }
 } exports.default = EventRegistration;
