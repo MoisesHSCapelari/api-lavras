@@ -58,6 +58,21 @@ var _bcryptjs = require('bcryptjs'); var _bcryptjs2 = _interopRequireDefault(_bc
           },
         },
       },
+      id_evento: {
+        type: _sequelize2.default.INTEGER,
+        allowNull: true,
+        references: {
+          model: 'EventEI',
+          key: 'id',
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
+      },
+      status: {
+        type: _sequelize2.default.STRING,
+        allowNull: true,
+        dafaultValue: ' ',
+      },
 
     }, {
       sequelize,
@@ -80,5 +95,9 @@ var _bcryptjs = require('bcryptjs'); var _bcryptjs2 = _interopRequireDefault(_bc
 
   passwordOutIsValid(passwordOut) {
     return _bcryptjs2.default.compare(passwordOut, this.passwordOut);
+  }
+
+  static associate(models) {
+    this.belongsTo(models.SpaceChildren, { foreignKey: 'id_evento' });
   }
 } exports.default = Children;

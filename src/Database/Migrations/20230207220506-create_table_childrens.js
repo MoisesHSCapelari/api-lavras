@@ -37,6 +37,21 @@ module.exports = {
         allowNull: false,
 
       },
+      status: {
+        type: Sequelize.STRING,
+        allowNull: true,
+
+      },
+      id_evento: {
+        type: Sequelize.INTEGER,
+        allowNull: true,
+        references: {
+          model: 'spaceChildrens',
+          key: 'id',
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
+      },
       createdAt: {
         type: Sequelize.DATE,
         allowNull: false,

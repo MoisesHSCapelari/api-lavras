@@ -24,13 +24,14 @@ class SpaceChildrenController {
 
   // show
   async show(req, res) {
+    const { id } = req.params;
     try {
-      if (!req.params.id) {
+      if (!id) {
         return res.status(400).json({
           errors: ['ID não informado'],
         });
       }
-      const spaceChildren = await SpaceChildren.findByPk(req.params.id);
+      const spaceChildren = await SpaceChildren.findByPk(id);
       return res.status(200).json(spaceChildren);
     } catch (e) {
       return res.status(400).json({
@@ -41,14 +42,15 @@ class SpaceChildrenController {
 
   // update
   async update(req, res) {
+    const { id } = req.params;
     try {
-      if (!req.params.id) {
+      if (!id) {
         return res.status(400).json({
           errors: ['ID não informado'],
         });
       }
 
-      const spaceChildren = await SpaceChildren.findByPk(req.params.id);
+      const spaceChildren = await SpaceChildren.findByPk(id);
       if (!spaceChildren) {
         return res.status(400).json({
           errors: ['Evento de Espaço Infantil não encontrado'],
