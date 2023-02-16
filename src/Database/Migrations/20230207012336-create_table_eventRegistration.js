@@ -6,9 +6,19 @@ module.exports = {
       primaryKey: true,
       type: Sequelize.INTEGER,
     },
+    id_crianca: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'childrens',
+        key: 'id',
+      },
+      onUpdate: 'CASCADE',
+      onDelete: 'CASCADE',
+    },
     id_evento: {
       type: Sequelize.INTEGER,
-      allowNull: true,
+      allowNull: false,
       references: {
         model: 'spaceChildrens',
         key: 'id',
@@ -16,37 +26,7 @@ module.exports = {
       onUpdate: 'CASCADE',
       onDelete: 'CASCADE',
     },
-    status: {
-      type: Sequelize.STRING,
-      allowNull: false,
-
-    },
-    nameChildren: {
-      type: Sequelize.STRING,
-      allowNull: false,
-
-    },
-    age: {
-      type: Sequelize.INTEGER,
-      allowNull: false,
-
-    },
-    nameGuardianOne: {
-      type: Sequelize.STRING,
-      allowNull: false,
-
-    },
-    phone: {
-      type: Sequelize.STRING,
-      allowNull: false,
-
-    },
-    passwordEntry: {
-      type: Sequelize.STRING,
-      allowNull: false,
-
-    },
-    passwordOut: {
+    statusChildren: {
       type: Sequelize.STRING,
       allowNull: false,
 

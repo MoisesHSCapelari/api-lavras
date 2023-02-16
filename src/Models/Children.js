@@ -58,22 +58,6 @@ export default class Children extends Model {
           },
         },
       },
-      id_evento: {
-        type: Sequelize.INTEGER,
-        allowNull: true,
-        references: {
-          model: 'EventEI',
-          key: 'id',
-        },
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE',
-      },
-      status: {
-        type: Sequelize.STRING,
-        allowNull: true,
-        dafaultValue: ' ',
-      },
-
     }, {
       sequelize,
       tableName: 'childrens',

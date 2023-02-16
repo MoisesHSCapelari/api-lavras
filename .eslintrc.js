@@ -22,5 +22,8 @@ module.exports = {
     'import/no-useless-path-segments': 'off',
     'no-param-reassign': 'off',
     'spaced-comment': 'off',
+    'max-len': 'off',
+    camelcase: 'off',
+    eqeqeq: 'off',
   },
 };
